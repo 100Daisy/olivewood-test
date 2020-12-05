@@ -1,4 +1,4 @@
-DEVICE_PATH := device/redmi/olivewood
+DEVICE_PATH := device/xiaomi/olivewood
 BOARD_VENDOR := redmi
 
 # Assert
@@ -34,8 +34,9 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androidkernel-
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78B0000 vmalloc=300M firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.avb_version=1.0 androidboot.vbmeta.avb_version=1.0
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm439
-TARGET_KERNEL_CONFIG := olivewood-perf_defconfig
+#TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm439
+#TARGET_KERNEL_CONFIG := olivewood-perf_defconfig
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_USES_UNCOMPRESSED_KERNEL := false
 TARGET_KERNEL_VERSION := 4.9
@@ -145,4 +146,4 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 
 # Inherit from the proprietary version
--include vendor/xiaomi/olivewood/BoardConfigVendor.mk
+-include vendor/redmi/olivewood/BoardConfigVendor.mk

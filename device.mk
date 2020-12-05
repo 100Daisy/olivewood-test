@@ -7,7 +7,6 @@ TARGET_LMKD_STATS_LOG := true
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
 # Properties
@@ -210,4 +209,4 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Inherit vendor
-$(call inherit-product, vendor/xiaomi/olivewood/olivewood-vendor.mk)
+$(call inherit-product, vendor/redmi/olivewood/olivewood-vendor.mk)
