@@ -9,6 +9,10 @@ TARGET_LMKD_STATS_LOG := true
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
+# AID/fs configs
+PRODUCT_PACKAGES += \
+    fs_config_files
+
 # Properties
 -include $(LOCAL_PATH)/vendor_props.mk
 
