@@ -1,3 +1,6 @@
+# inherit from common sdm439-common
+-include device/xiaomi/sdm439-common/BoardConfigCommon.mk
+
 DEVICE_PATH := device/redmi/olivewood
 BOARD_VENDOR := redmi
 
