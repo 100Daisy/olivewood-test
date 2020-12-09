@@ -1,3 +1,6 @@
+# Inherit from sdm439-common
+$(call inherit-product, device/xiaomi/sdm439-common/msm8937.mk)
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1520
 TARGET_SCREEN_WIDTH := 720
