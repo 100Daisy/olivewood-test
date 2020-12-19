@@ -147,11 +147,11 @@ service vendor.qseecomd /vendor/bin/qseecomd
    group root
 
 # add PcbaConfigSet
-service PcbaConfigSet /system/vendor/bin/PcbaConfigSet
-    class core
-    user root
-    group root system vendor_qti_diag
-    oneshot
+#service PcbaConfigSet /system/vendor/bin/PcbaConfigSet
+#    class core
+#    user root
+#    group root system vendor_qti_diag
+#    oneshot
 
 #service aostlmd /system/bin/aostlmd
 #   class late_start

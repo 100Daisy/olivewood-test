@@ -3,7 +3,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from olivewood device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -11,7 +11,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := redmi
 PRODUCT_DEVICE := olivewood
 PRODUCT_MANUFACTURER := redmi
-PRODUCT_NAME := lineage_olivewood
+PRODUCT_NAME := aosp_olivewood
 PRODUCT_MODEL := Redmi 8A Dual
 
 PRODUCT_GMS_CLIENTID_BASE := android-redmi
