@@ -1,1 +1,1 @@
-hal_client_domain(system_app, hal_mlipay)
+allow system_app sysfs_kgsl:file r_file_perms;
