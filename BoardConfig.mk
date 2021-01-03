@@ -136,7 +136,7 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     $(DEVICE_PATH)/sepolicy/private \
     $(DEVICE_PATH)/sepolicy/public  \
     $(DEVICE_PATH)/sepolicy/vendor
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # System-as-root
