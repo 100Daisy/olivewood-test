@@ -156,8 +156,6 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
-
-
 # Encryption
 #TARGET_HW_DISK_ENCRYPTION := true
 
@@ -179,10 +177,9 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm439
 TARGET_KERNEL_CONFIG := olive-perf_defconfig
 #TARGET_KERNEL_CLANG_COMPILE := true
-BOARD_KERNEL_SEPARATED_DTBO := true
+#BOARD_KERNEL_SEPARATED_DTBO := true
 #TARGET_PREBUILT_KERNEL:= device/xiaomi/olive/kernel
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-
 
 # OTA
 TARGET_OTA_ASSERT_DEVICE :=olivewood
@@ -217,7 +214,6 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/xiaomi/olivewood/recovery/root/etc/recovery.fstab
-
 
 # Verity
 BOARD_AVB_ENABLE := true

@@ -11,31 +11,12 @@
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
-
-
-
-
-#ifeq ($(TARGET_PREBUILT_KERNEL),)
-#LOCAL_KERNEL := device/xiaomi/olive/kernel
-#else
-#LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-#endif
-
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_KERNEL):kernel 
-
-
+# limitations under the 
 
 
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
-
-
-
 
 PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
@@ -45,19 +26,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
-
-
-# Fingerprint
-#PRODUCT_PACKAGES += \
-#    android.hardware.biometrics.fingerprint@2.1
-
-
-
 #Securelock
 PRODUCT_COPY_FILES += \
     device/xiaomi/olivewood/securelock.xml:system/etc/permissions/securelock.xml
-
-
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -68,13 +39,10 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
-
-
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
-
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -109,36 +77,22 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
-
-
-# NFC
-#PRODUCT_PACKAGES += \
-#    android.hardware.nfc@1.1-service \
-#    SecureElement \
-#    Tag
-
 # For config.fs
 PRODUCT_PACKAGES += \
     fs_config_files
-
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
-
-
 PRODUCT_PACKAGES += \
     XiaomiDoze
-
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy 
-
-
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -148,8 +102,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     $(LOCAL_PATH)/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
-
-
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -163,14 +115,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     $(LOCAL_PATH)/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
-
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant.antradio_library \
     libantradio
-
 
 # QTI
 PRODUCT_COPY_FILES += \
@@ -182,8 +131,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
-
-
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -201,7 +148,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_profiles_8956.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_8956.xml \
     $(LOCAL_PATH)/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
     $(LOCAL_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
-
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -242,8 +188,6 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     ueventd.qcom.rc
 
-
-
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
@@ -263,13 +207,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config \
 
-
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl \
-
 
 # WiFi Display
 PRODUCT_PACKAGES += \
@@ -296,11 +238,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wigig_p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wigig_p2p_supplicant.conf \
     $(LOCAL_PATH)/wifi/wigig_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wigig_supplicant.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-
-
-
-
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf 
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -328,9 +266,6 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     tinymix
-
-
-
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -371,9 +306,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml \
     $(LOCAL_PATH)/audio/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
-
-
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -393,8 +325,6 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml
 
-
-
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -409,8 +339,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
-
-
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -438,4 +366,4 @@ PRODUCT_PACKAGES += \
 -include $(LOCAL_PATH)/vendor_prop.mk
 
 # Call proprietary blob setup
-#$(call inherit-product-if-exists, vendor/xiaomi/olive/olive-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/olivewood/olivewood-vendor.mk)
