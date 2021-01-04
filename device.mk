@@ -18,14 +18,14 @@
 
 
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/xiaomi/olive/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
+#ifeq ($(TARGET_PREBUILT_KERNEL),)
+#LOCAL_KERNEL := device/xiaomi/olive/kernel
+#else
+#LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+#endif
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel 
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_KERNEL):kernel 
 
 
 
@@ -48,14 +48,14 @@ PRODUCT_PACKAGES += \
 
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1
+#PRODUCT_PACKAGES += \
+#    android.hardware.biometrics.fingerprint@2.1
 
 
 
 #Securelock
 PRODUCT_COPY_FILES += \
-    device/xiaomi/olive/securelock.xml:system/etc/permissions/securelock.xml
+    device/xiaomi/olivewood/securelock.xml:system/etc/permissions/securelock.xml
 
 
 
@@ -112,10 +112,10 @@ PRODUCT_COPY_FILES += \
 
 
 # NFC
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.1-service \
-    SecureElement \
-    Tag
+#PRODUCT_PACKAGES += \
+#    android.hardware.nfc@1.1-service \
+#    SecureElement \
+#    Tag
 
 # For config.fs
 PRODUCT_PACKAGES += \
@@ -175,7 +175,7 @@ PRODUCT_PACKAGES += \
 # QTI
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-qti.xml
-    
+
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
@@ -285,13 +285,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
-    
-
-
-
-
-
-
 
 # WiFi
 PRODUCT_COPY_FILES += \

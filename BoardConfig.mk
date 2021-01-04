@@ -14,15 +14,11 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/olive
+DEVICE_PATH := device/xiaomi/olivewood
 BOARD_VENDOR := xiaomi
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-01-01
-
-
-
-
 
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
@@ -31,20 +27,13 @@ TARGET_RIL_VARIANT := caf
 # Seecomp
 BOARD_SECCOMP_POLICY := $(VENDOR_PATH)/seccomp
 
-
-
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := true
 USE_DEVICE_SPECIFIC_GPS := true
 
-
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
-
-TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/olive
-
-
+TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/olivewood
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -101,12 +90,10 @@ TARGET_USES_QCOM_MM_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
-
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/olive/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/olivewood/bluetooth
 BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_SMD_TTY := true
-
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -118,49 +105,41 @@ TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API := true
 TARGET_USES_QCOM_DISPLAY_BSP := true
-
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 #Drm
 TARGET_ENABLE_MEDIADRM_64 := true
 
-
 #Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
-
 
 # FM
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := device/xiaomi/olive/manifest.xml
-DEVICE_MATRIX_FILE := device/xiaomi/olive/compatibility_matrix.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/xiaomi/olive/framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := device/xiaomi/olivewood/manifest.xml
+DEVICE_MATRIX_FILE := device/xiaomi/olivewood/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/xiaomi/olivewood/framework_compatibility_matrix.xml
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := device/xiaomi/olive/config.fs
-
+TARGET_FS_CONFIG_GEN := device/xiaomi/olivewood/config.fs
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/dev/input/event3"
 
 # Architecture
-TARGET_ARCH := arm64
+TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv8-a
-TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
-
-
-
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := cortex-a53
+TARGET_USES_64_BIT_BINDER = true
+TARGET_CPU_CORTEX_A53 := true
+TARGET_CPU_SMP := true
+ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # Board
 TARGET_NO_BOOTLOADER := true
@@ -197,15 +176,16 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/olive
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm439
 TARGET_KERNEL_CONFIG := olive-perf_defconfig
-TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_COMPILE := true
+BOARD_KERNEL_SEPARATED_DTBO := true
 #TARGET_PREBUILT_KERNEL:= device/xiaomi/olive/kernel
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 
 # OTA
-TARGET_OTA_ASSERT_DEVICE :=olive
+TARGET_OTA_ASSERT_DEVICE :=olivewood
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -215,28 +195,28 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4831838208
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 22410148864
 BOARD_CACHEIMAGE_PARTITION_SIZE := 402653184
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
-#BOARD_VENDORIMAGE_PARTITION_SIZE := 1610612736
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1610612736
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware_mnt:/firmware \
     /mnt/vendor/persist:/persist
-BOARD_PREBUILT_VENDORIMAGE := device/xiaomi/olive/vendor.img
+#BOARD_PREBUILT_VENDORIMAGE := device/xiaomi/olive/vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-#BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
-#BOARD_USES_VENDORIMAGE := true
+BOARD_USES_VENDORIMAGE := true
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/xiaomi/olive/sepolicy-minimal
+BOARD_SEPOLICY_DIRS += device/xiaomi/olivewood/sepolicy-minimal
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/xiaomi/olive/recovery/root/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/xiaomi/olivewood/recovery/root/etc/recovery.fstab
 
 
 # Verity
@@ -251,7 +231,7 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_EXTRA_VNDK_VERSIONS:= 28
 
 # Props
-TARGET_SYSTEM_PROP += device/xiaomi/olive/system.prop
+TARGET_SYSTEM_PROP += device/xiaomi/olivewood/system.prop
 
 
 # Wifi
@@ -268,4 +248,4 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 
 
 # Inherit proprietary version
-#-include vendor/xiaomi/olive/BoardConfigVendor.mk
+-include vendor/xiaomi/olivewood/BoardConfigVendor.mk

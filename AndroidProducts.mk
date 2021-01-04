@@ -1,7 +1,6 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_olive.mk
-    
-    
+    $(LOCAL_DIR)/aosp_olivewood.mk
+
 COMMON_LUNCH_CHOICES:= \
-    aosp_olive-userdebug \
-    aosp_olive-eng    
+    aosp_olivewood-userdebug \
+    aosp_olivewood-eng    
